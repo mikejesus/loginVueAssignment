@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page and Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        .general {
+            padding: 15px;
+            /* margin-top: 40px; */
+        }
+        
+        body {
+            font-family: sans-serif;
+            background-color: #222;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container-fluid general">
+
+            <h1 class="text-white text-center">LOGIN PAGE DETAILS DISPLAY</h1>
+            <div class="row mt-5">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <div class="text-center text-white">
+                        <h3>LOGIN FORM</h3>
+                        <p>Enter login details correctly</p>
+                    </div>
+
+                    <form>
+                        <div class="form-group">
+
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" v-model="email" placeholder="Email Address Here" required>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" v-model="password" placeholder="Enter Password" required>
+                        </div>
+                        <div class="text-center">
+                            <button @click.prevent="displayLoginDetails" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4" v-if="displayResult">
+
+                    <div class="text-center text-white">
+                        <h3>MY LOGIN DETAILS</h3>
+                        <h5>Email address is {{newEmail}}</h5>
+                        <h5>Password is {{newPassword}}</h5>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="vue.js"></script>
+    <script src="app.js">
+    </script>
+</body>
+
+</html>
